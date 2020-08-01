@@ -398,7 +398,7 @@
       $( ".btn-delete" ).click(function() {
         swal({
           title: "Are you sure to delete?",
-          text: "Once deleted, you will not be able to recover this imaginary file!",
+          text: "Once deleted, you will not be able to recover this file!",
           icon: "warning",
           buttons: true,
           dangerMode: true,
