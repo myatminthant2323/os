@@ -92,7 +92,8 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        return view('backend.items.show');
+        $item = Item::find($id);
+        return view('backend.items.show',compact('item'));
     }
 
     /**

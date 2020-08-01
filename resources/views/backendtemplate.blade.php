@@ -17,7 +17,16 @@
 
   <!-- Custom styles for this template-->
   <link href="{{ asset('backendtemplate/css/sb-admin-2.min.css')}}" rel="stylesheet">
-
+  <style type="text/css">
+     .shadow {
+       /*-moz-box-shadow:    inset 0 0 10px #000000;
+       -webkit-box-shadow: inset 0 0 10px #000000;
+       box-shadow:         inset 0 0 10px #000000;*/
+       -webkit-box-shadow: -11px 9px 9px -6px rgba(0,0,0,0.75);
+       -moz-box-shadow: -11px 9px 9px -6px rgba(0,0,0,0.75);
+       box-shadow: -11px 9px 9px -6px rgba(0,0,0,0.75);
+     }
+  </style>
 
 </head>
 
@@ -437,6 +446,8 @@
         });
       }
     })
+
+    
 
 
 
