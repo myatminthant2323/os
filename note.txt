@@ -1,0 +1,10 @@
+homework
+--------
+	-CRUD(Sweet Alert)
+	 -custom input validation (required ဆိုပီးအများကြီးပေါ်နေတာ)
+	 -image upload in update process
+	 -delete images from storage if changes
+
+	-categories, brands, subcategories (CRUD)
+
+	-Upload into github repo
