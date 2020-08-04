@@ -34,7 +34,7 @@
 
 		<!-- show three latest items details  -->
 
-		<div class="row">
+		<div class="row animated animatedFadeInUp fadeInUp">
 			@foreach($items as $item)
 				<div class="col-md-3 mb-5 moreInfoDiv">
 					<div class="card h-100 shadow hvr-shrink hvr-underline-from-center">
