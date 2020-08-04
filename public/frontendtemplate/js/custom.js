@@ -1,9 +1,7 @@
 // alert('Hello, custom js!');
 $(document).ready(function(){
 
-	show_product_count();
-
-	function show_product_count(){
+  function show_product_count(){
             // get my_cart JSON from localStorage
             var my_cart = localStorage.getItem('my_cart');
             if(my_cart){
@@ -21,22 +19,20 @@ $(document).ready(function(){
            	})
            // show product_count result in Badge
            $(".product_count").html(product_count);
+         }
        }
-   }
-}
+     }
 
-
-
-function add_to_cart(product){
+     function add_to_cart(product){
             // cgeck my_cart json in local storage
             var my_cart = localStorage.getItem('my_cart');
 
             if(!my_cart){
               // if my_cart is not in the local storage,create new
               my_cart = '{"product_list":[]}';
-          }
-          
-          
+            }
+
+
           // parse JSON to obj
           var my_cart_obj = JSON.parse(my_cart);
 
@@ -61,15 +57,15 @@ function add_to_cart(product){
           // parse my_cart_obj to JSON string and store to localstorage
           localStorage.setItem('my_cart', JSON.stringify(my_cart_obj));
           console.log(my_cart_obj);
-      }
+        }
 
 
-      $(".add_to_cart").click(function(){
-      	console.log('hi');
-      	var id = $(this).data('id');
-      	var name = $(this).data('name');
-      	var price = $(this).data('price');
-      	var photo = $(this).data('photo');
+        $(".add_to_cart").click(function(){
+         console.log('hi');
+         var id = $(this).data('id');
+         var name = $(this).data('name');
+         var price = $(this).data('price');
+         var photo = $(this).data('photo');
             //console.log(id,name,price,photo);
             var product = {
             	id:id,
@@ -80,5 +76,5 @@ function add_to_cart(product){
             };
             add_to_cart(product);
             show_product_count();
-        })
-  })
+          })
+      })
