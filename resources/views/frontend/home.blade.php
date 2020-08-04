@@ -36,9 +36,9 @@
 
 		<div class="row animated animatedFadeInUp fadeInUp">
 			@foreach($items as $item)
-				<div class="col-md-3 mb-5 moreInfoDiv">
+				<div class="col-md-3 mb-5">
 					<div class="card h-100 shadow hvr-shrink hvr-underline-from-center">
-						<div class="card-body">
+						<div class="card-body moreInfoDiv">
 							<h4 class="card-title">{{$item->name}}</h4>
 							<img src="{{ asset($item->photo)}}" class="img-fluid">
 							<p class="card-text">

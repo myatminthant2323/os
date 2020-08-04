@@ -204,6 +204,12 @@
        -moz-box-shadow: -11px 9px 9px -6px rgba(0,0,0,0.75);
        box-shadow: -11px 9px 9px -6px rgba(0,0,0,0.75);
      }
+
+     .borderless td, .borderless th {
+      border: none;
+      border-top: 0;
+      border-bottom: 0;
+    }
   </style>
 
 </head>

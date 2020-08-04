@@ -64,12 +64,14 @@ $(document).ready(function(){
         $(".add_to_cart").click(function(){
          console.log('hi');
          var id = $(this).data('id');
+         var codeno = $(this).data('codeno');
          var name = $(this).data('name');
          var price = $(this).data('price');
          var photo = $(this).data('photo');
             //console.log(id,name,price,photo);
             var product = {
             	id:id,
+              codeno:codeno,
             	name:name,
             	price:price,
             	photo:photo,
