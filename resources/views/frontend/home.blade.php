@@ -28,8 +28,34 @@
 			</div>
 		</div>
 
-		<!-- Content Row -->
+
+
+
+
+		<!-- show three latest items details  -->
+
 		<div class="row">
+			@foreach($items as $item)
+				<div class="col-md-4 mb-5">
+					<div class="card h-100">
+						<div class="card-body">
+							<h2 class="card-title">{{$item->name}}</h2>
+							<img src="{{ asset($item->photo)}}" class="img-fluid">
+							<p class="card-text">
+								Price: {{$item->price}} MMK
+							</p>
+						</div>
+						<div class="card-footer">
+							<a href="{{route('itemdetail',$item->id)}}" class="btn btn-primary btn-sm">More Info</a>
+							<a class='btn btn-primary px-2 add_to_cart hvr-icon-buzz-out' href='#' role='button' data-id='{{$item->id}}' data-photo='{{asset($item->photo)}}' data-name='{{$item->name}}'data-codeno='{{$item->codeno}}' data-price='{{$item->price}}' data-description='{{$item->description}}'>Add to Cart  <i class='fa fa-shopping-cart hvr-icon' aria-hidden='true'></i></a>
+						</div>
+					</div>
+				</div>
+			@endforeach
+		</div>
+
+		<!-- Content Row -->
+		<!-- <div class="row">
 			<div class="col-md-4 mb-5">
 				<div class="card h-100">
 					<div class="card-body">
@@ -41,36 +67,19 @@
 					</div>
 				</div>
 			</div>
-			<!-- /.col-md-4 -->
-			<div class="col-md-4 mb-5">
-				<div class="card h-100">
-					<div class="card-body">
-						<h2 class="card-title">Card Two</h2>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
-					</div>
-					<div class="card-footer">
-						<a href="#" class="btn btn-primary btn-sm">More Info</a>
-					</div>
-				</div>
-			</div>
-			<!-- /.col-md-4 -->
-			<div class="col-md-4 mb-5">
-				<div class="card h-100">
-					<div class="card-body">
-						<h2 class="card-title">Card Three</h2>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-					</div>
-					<div class="card-footer">
-						<a href="#" class="btn btn-primary btn-sm">More Info</a>
-					</div>
-				</div>
-			</div>
-			<!-- /.col-md-4 -->
+			
+			
 
-		</div>
+		</div> -->
 		<!-- /.row -->
 
 	</div>
 
 
+@endsection
+
+@section('script')
+	<script type="text/javascript" src="{{asset('frontendtemplate/js/custom.js')}}">
+		
+	</script>
 @endsection

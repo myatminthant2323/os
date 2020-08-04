@@ -6,7 +6,7 @@
 
 	<div class="container-fluid">
 		<h2 class="d-inline-block">Brands List</h2>
-		<a href="{{route('items.create')}}" class="btn btn-primary float-right btn-sm">Add New</a>
+		<a href="{{route('brands.create')}}" class="btn btn-primary float-right btn-sm">Add New</a>
 		<table class="table table-border">
 			<thead>
 				<tr>

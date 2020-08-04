@@ -79,7 +79,7 @@ class ItemController extends Controller
 
         $status = 1;
         // Redirect
-        return redirect()->route('items.index',compact('status'));
+        return redirect()->route('items.index')->with('status', 1);
 
 
     }
@@ -174,7 +174,7 @@ class ItemController extends Controller
         $status = 2;
 
         // Redirect
-        return redirect()->route('items.index',compact('status'));
+        return redirect()->route('items.index')->with('status', 2);
     }
 
     /**
@@ -196,6 +196,6 @@ class ItemController extends Controller
         $item->delete();
 
         $status = 3;
-        return redirect()->route('items.index',compact('status'));
+        return redirect()->route('items.index')->with('status', 3);
     }
 }
