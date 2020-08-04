@@ -59,7 +59,7 @@
 				</div>
 				<div class="modal-body">
 					<div class="row">
-						<div class='col-md-4 mt-2 animated in-left'>
+						<div class='col-md-4 mt-2 animated animatedFadeInUp fadeInUp'>
 							<!-- {{ asset('backendtemplate/itemimg/1596261821.jpeg')}} -->
 							<p><img src="" class='img-fluid itemImg'></p>
 						</div>

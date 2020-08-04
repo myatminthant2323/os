@@ -9,7 +9,7 @@ class FrontendController extends Controller
 {
     public function home($value='')
     {
-    	$items = Item::all()->take(3);
+    	$items = Item::all()->take(4);
     	// dd($items);
     	return view('frontend.home',compact('items'));
     }

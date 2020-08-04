@@ -7,7 +7,7 @@
 		<h4>Detail Page</h4>
 	</div> -->
 
-	<div class="container-fluid animated animatedFadeInUp fadeInUp">
+	<div class="container pb-4 animated animatedFadeInUp fadeInUp">
 	<h1 class="text-center mt-5 mb-4">Product Detail</h1>
 	<div class="row">
 		<div class='col-md-4 mt-2 animated in-left'>
@@ -34,7 +34,5 @@
 @endsection
 
 @section('script')
-	<script type="text/javascript" src="{{asset('frontendtemplate/js/custom.js')}}">
-		
-	</script>
+	<script type="text/javascript" src="{{asset('frontendtemplate/js/custom.js')}}"></script>
 @endsection

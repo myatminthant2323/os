@@ -15,6 +15,7 @@
 
   <!-- Custom styles for this template -->
   <link href="{{ asset('frontendtemplate/css/small-business.css')}}" rel="stylesheet">
+  <link href="{{ asset('frontendtemplate/css/hover-master/css/hover.css')}}" rel="stylesheet">
   <link href="{{ asset('frontendtemplate/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
   <style type="text/css">
     @-webkit-keyframes fadeInLeft {

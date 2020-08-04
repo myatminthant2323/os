@@ -1,5 +1,6 @@
 // alert('Hello, custom js!');
 $(document).ready(function(){
+  show_product_count();
 
   function show_product_count(){
             // get my_cart JSON from localStorage
