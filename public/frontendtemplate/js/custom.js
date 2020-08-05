@@ -1,5 +1,7 @@
 // alert('Hello, custom js!');
 $(document).ready(function(){
+
+  // ================== add-to-cart =================== 
   show_product_count();
 
   function show_product_count(){
@@ -80,4 +82,29 @@ $(document).ready(function(){
             add_to_cart(product);
             show_product_count();
           })
-      })
+        //===============end add-to-cart===================
+
+
+        //==================check out======================
+        $.ajaxSetup({
+          headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+        });
+
+
+        $('.checkout').click(function(){
+          // alert("OK");
+          var loStr = localStorage.getItem('my_cart');
+          if(loStr) {
+            $.post("/checkout",{data:loStr},function(res){
+              // console.log(res);
+            })
+            localStorage.clear();
+            window.location.href="/";
+          }
+        });
+
+      });
+
+

@@ -6,27 +6,66 @@
 	<!-- <div class="container">
 		<h4>Cart Page</h4>
 	</div> -->
-	<div class="container animated animatedFadeInUp fadeInUp cart_container">
+	<div class="container-fluid animated animatedFadeInUp fadeInUp cart_container">
 
 
     
         
-<!--     <h2 class="py-5">Shopping Cart <span class="total_item"></span></h2>
-    <div class="row">
+    <h2 class="pt-5 pb-2 ml-5">Shopping Cart <span class="total_item" style="color:#ccbd0f;"></span></h2>
+    <div class="row mx-4">
       <div class="col-md-8 cart_item">
 
       </div>
-      <div class="col-md-3 shadow">
-        <h3 class="mb-2 mt-3">Order Summary</h3>
-        <hr style="border: 1px solid black;">
-        
+      <div class="col-md-4 order_summery">
+        <div class="row ml-1">
+          <div class="col-md-12 my-1 shadow">
+            <h3 class="mb-2 mt-3">ORDER SUMMERY</h3>
+            <hr>
+            <div class="row">
+              <div class="col-8 total-label">
+                <p>Shipping cost</p>
+              </div>
+              <div class="col-4">
+                <p class="text-right shipping-cost">FREE</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-8 total-label">
+                <p>Estimated Tax</p>
+              </div>
+              <div class="col-4">
+                <p class="text-right tax">0 MMK</p>
+              </div>
+            </div>
+            <hr class="mt-0 pt-0">
+            <div class="row">
+              <div class="col-8 total-label">
+                <p>Estimated Total</p>
+              </div>
+              <div class="col-4">
+                <p class="text-right total"></p>
+              </div>
+            </div>
+            <div class="row mt-2 mb-3">
+              <div class="col-12">
+                <a href="#" class="btn btn-primary btn-block checkout" style="background-color: black;">
+                  Checkout
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div> -->
-      
-
+    </div>
     <hr>
 
   </div>
+
+  <!-- <div class="container py-2">
+    <a href="#" class="btn btn-success float-right checkout">Checkout</a>
+  </div> -->
+
+
 
 @endsection
 
@@ -123,11 +162,11 @@
         var my_cart = localStorage.getItem('my_cart');
         if(my_cart){
           var my_cart_obj = JSON.parse(my_cart);
-          var html = `<h2 class="py-5">Shopping Cart <span class="total_item"></span></h2>`;
+          // var html = `<h2 class="py-5">Shopping Cart <span class="total_item" style="color:#ccbd0f;"></span></h2>`;
           // $(".cartbody").html(cart_detail_html);
           if(my_cart_obj.product_list){
             if(my_cart_obj.product_list.length){
-              var total=0;
+              var html = ''; var total=0;
               $(my_cart_obj.product_list).each(function(i,v){
                 var id = v.id;
                 var codeno = v.codeno;
@@ -142,54 +181,61 @@
                 
 
                 html += `
-                <div class="row px-5 pt-4 my-1 shadow">
-                <div class="col-md-4">
-                <img src='${photo}' class='img-fluid'>
-                </div>
-                <div class="col-md-8">
-                <h3 class="mt-3">${name}</h3>
-
-                <table class="table borderless">
-                <thead>
-                <tr>
+      <div class="row px-5 pt-4 my-1 mr-1 shadow">
+        <div class="col-md-4">
+          <a href="/itemdetail/${id}">
+            <img src='${photo}' class='img-fluid'>
+          </a>
+        </div>
+        <div class="col-md-8">
+          <a href="/itemdetail/${id}" style="color:#000;">
+            <h3 class="mt-3">${name}</h3>
+          </a>
+          <table class="table borderless">
+            <thead>
+              <tr>
                 <th style="border-bottom: 0; border-top: 0; padding-left: 0px; padding-right: 0px;">Item Number</th>
                 <th style="border-bottom: 0; border-top: 0; padding-left: 0px; padding-right: 30px;">Price</th>
                 <th style="border-bottom: 0; border-top: 0; padding-left: 0px; padding-right: 0px;">Quantity</th>
                 <th style="border-bottom: 0; border-top: 0; padding-left: 0px; padding-right: 0px;">SubTotal</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
+                <th style="border-bottom: 0; border-top: 0; padding-left: 0px; padding-right: 0px;"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
                 <td style="border-bottom: 0; border-top: 0; padding-left: 0px; padding-right: 0px;">${codeno}</td>
                 <td style="border-bottom: 0; border-top: 0; padding-left: 0px; padding-right: 0px;">${price}</td>
                 <td style="border-bottom: 0; border-top: 0; padding-left: 0px; padding-right: 0px;"><button class='btn btn-danger btn-sm btn_minus mx-3' data-id=${id}>-</button>${quantity}<button class='btn btn-warning btn-sm  btn_plus mx-3 text-white'  data-id=${id}>+</button></td>
                 <td style="border-bottom: 0; border-top: 0; padding-left: 0px; padding-right: 0px;">${subtotal}</td>
-                </tr>
-                </tbody>
-                </table>
-                <p class="mt-5"><a href="#" >Save for later</a> | <a href="#" class="remove" data-id=${id}>Remove</a></p> 
-                </div>
-                </div>
+                <td style="border-bottom: 0; border-top: 0; padding-left: 10px; padding-right: 0px;"><a href="#" style="color:#000;" class="remove hvr-icon-pulse-grow" data-id=${id}><i class="fas fa-times hvr-icon"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="mt-5"><a href="#" style="color:#000;">Save for later</a> | <a href="#" style="color:#000;" class="remove" data-id=${id}>Remove</a></p> 
+        </div>
+      </div>
                 `;
               });
               // html = html+`<tr><td colspan=5 class='text-center'>Total</td><td>${total}</td></tr>`;
-              $(".cart_container").html(html);
+              $(".cart_item").html(html);
+
+              $('.total').html(total+" MMK");
 
               var total_item = "("+my_cart_obj.product_list.length+" items)";
                 $(".total_item").html(total_item);
 
 
             }else{
-              $(".cart_container").html('<h3 class="my-5">Your Cart is Empty</h3>');
-              
+              $(".cart_item").html('<h3 class="my-5">Your Cart is Empty</h3>');
+              $(".order_summery").hide();
             }
           }else{
-            $(".cart_container").html('<h3 class="my-5">Your Cart is Empty</h3>');
-            
+            $(".cart_item").html('<h3 class="my-5">Your Cart is Empty</h3>');
+            $(".order_summery").hide();
           }
         }else{
-          $(".cart_container").html('<h3 class="my-5">Your Cart is Empty</h3>');
-          
+          $(".cart_item").html('<h3 class="my-5">Your Cart is Empty</h3>');
+          $(".order_summery").hide();
         }
       }
 

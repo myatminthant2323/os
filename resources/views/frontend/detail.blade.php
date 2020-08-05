@@ -24,7 +24,7 @@
 					<tr><td>Description:<td>{{$item->description}}</td></tr>
 				</tbody>
 			</table>
-			<p class='text-center'><a class='btn btn-primary px-2 add_to_cart hvr-icon-buzz-out' href='#' role='button' data-id='{{$item->id}}' data-photo='{{asset($item->photo)}}' data-name='{{$item->name}}'data-codeno='{{$item->codeno}}' data-price='{{$item->price}}' data-description='{{$item->description}}'>Add to Cart  <i class='fa fa-shopping-cart hvr-icon' aria-hidden='true'></i></a></p>
+			<p class='text-center'><a class='btn btn-primary px-2 add_to_cart hvr-icon-buzz-out' href='#' role='button' data-id='{{$item->id}}' data-photo='{{asset($item->photo)}}' data-name='{{$item->name}}'data-codeno='{{$item->codeno}}' data-price='{{$item->price}}' data-description='{{$item->description}}'>Add to Cart <i class='fa fa-shopping-cart hvr-icon' aria-hidden='true'></i></a></p>
 		</div>
 	</div>
 
