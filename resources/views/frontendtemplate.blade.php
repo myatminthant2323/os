@@ -85,6 +85,72 @@
         animation-delay: 0.2s;
       }
 
+      @-webkit-keyframes fadeInRight {
+        from {
+          opacity:0;
+          -webkit-transform: translatex(10px);
+          -moz-transform: translatex(10px);
+          -o-transform: translatex(10px);
+          transform: translatex(10px);
+        }
+        to {
+          opacity:1;
+          -webkit-transform: translatex(0);
+          -moz-transform: translatex(0);
+          -o-transform: translatex(0);
+          transform: translatex(0);
+        }
+      }
+      @-moz-keyframes fadeInRight {
+        from {
+          opacity:0;
+          -webkit-transform: translatex(-10px);
+          -moz-transform: translatex(-10px);
+          -o-transform: translatex(-10px);
+          transform: translatex(-10px);
+        }
+        to {
+          opacity:1;
+          -webkit-transform: translatex(0);
+          -moz-transform: translatex(0);
+          -o-transform: translatex(0);
+          transform: translatex(0);
+        }
+      }
+      @keyframes fadeInRight {
+        from {
+          opacity:0;
+          -webkit-transform: translatex(100px);
+          -moz-transform: translatex(100px);
+          -o-transform: translatex(100px);
+          transform: translatex(100px);
+        }
+        to {
+          opacity:1;
+          -webkit-transform: translatex(0);
+          -moz-transform: translatex(0);
+          -o-transform: translatex(0);
+          transform: translatex(0);
+        }
+      }
+      .in-right {
+        -webkit-animation-name: fadeInRight;
+        -moz-animation-name: fadeInRight;
+        -o-animation-name: fadeInRight;
+        animation-name: fadeInRight;
+        -webkit-animation-fill-mode: both;
+        -moz-animation-fill-mode: both;
+        -o-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-duration: 0.2s;
+        -moz-animation-duration: 0.2s;
+        -o-animation-duration: 0.2s;
+        animation-duration: 0.2s;
+        -webkit-animation-delay: 0.2s;
+        -moz-animation-delay: 0.2s;
+        -o-animation-duration:0.2s;
+        animation-delay: 0.2s;
+      }
       /*======================FadeInUp===========================*/
       @keyframes fadeInUp {
           from {

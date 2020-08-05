@@ -38,15 +38,16 @@
 			@foreach($items as $item)
 				<div class="col-md-3 mb-5">
 					<div class="card h-100 shadow hvr-shrink hvr-underline-from-center">
-						<div class="card-body moreInfoDiv">
-							<h4 class="card-title">{{$item->name}}</h4>
-							<img src="{{ asset($item->photo)}}" class="img-fluid">
-							<p class="card-text">
-								Price: {{$item->price}} MMK
-							</p>
-						</div>
+						<a href="{{route('itemdetail',$item->id)}}" style="text-decoration: none; color:#000;">
+							<div class="card-body">
+								<h4 class="card-title">{{$item->name}}</h4>
+								<img src="{{ asset($item->photo)}}" class="img-fluid">
+								<p class="card-text">
+									Price: {{$item->price}} MMK
+								</p>
+							</div>
+						</a>
 						<div class="card-footer">
-							<a href="{{route('itemdetail',$item->id)}}" class="btn btn-primary btn-sm float-left mb-2 moreinfo" id="moreinfo">More Info</a>
 							<a class='btn btn-primary btn-sm add_to_cart hvr-icon-buzz-out btn-block mb-2' href='#' role='button' data-id='{{$item->id}}' data-photo='{{asset($item->photo)}}' data-name='{{$item->name}}'data-codeno='{{$item->codeno}}' data-price='{{$item->price}}' data-description='{{$item->description}}'>Add to Cart  <i class='fa fa-shopping-cart hvr-icon' aria-hidden='true'></i></a>
 						</div>
 					</div>
@@ -80,14 +81,4 @@
 
 @section('script')
 	<script type="text/javascript" src="{{asset('frontendtemplate/js/custom.js')}}"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$( ".moreinfo" ).hide();
-			$(".moreInfoDiv").click(function(event){
-				$(location).attr('href', $(".moreinfo").attr('href'));
-				// window.open($(".moreinfo").attr('href'),'_blank');
-			});
-		});
-		
-	</script>
 @endsection

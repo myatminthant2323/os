@@ -8,6 +8,7 @@
 	</div> -->
 	<div class="container animated animatedFadeInUp fadeInUp cart_container">
 
+
     
         
 <!--     <h2 class="py-5">Shopping Cart <span class="total_item"></span></h2>
@@ -54,6 +55,28 @@
             change_product_quantity(2,id);
           });
 
+      $(".cart_container").on('click','.remove',function(){
+            // alert('minus');
+            event.preventDefault();
+            var id = $(this).data('id');
+            var my_cart = localStorage.getItem('my_cart');
+            var my_cart_obj = JSON.parse(my_cart);
+            $(my_cart_obj.product_list).each(function(i,v){
+              if(v.id == id){
+
+                var ans = confirm('Are You Sure to delete?');
+                if(ans){
+                  // console.log(my_cart_obj.product_list[1]);
+                  my_cart_obj.product_list.splice(i, 1);
+                  // console.log(my_cart_obj.product_list[0]);
+                  localStorage.setItem('my_cart',JSON.stringify(my_cart_obj));
+                  showTable();
+                  show_product_count();
+                }
+              }
+            });
+          });
+
       function change_product_quantity(type,id){
         var my_cart = localStorage.getItem('my_cart');
         var my_cart_obj = JSON.parse(my_cart);
@@ -73,8 +96,8 @@
                 // .then((willDelete) => {
                 //   if (willDelete) {
                     
-                //     var f = my_cart_obj.product_list.splice(i, 1);
-                //     console.log(f);
+                //     my_cart_obj.product_list.splice(i, 1);
+                    
                 //   }
                 // });
                 var ans = confirm('Are You Sure to delete?');
@@ -144,7 +167,7 @@
                 </tr>
                 </tbody>
                 </table>
-                <p class="mt-5">Save for later | Remove</p> 
+                <p class="mt-5"><a href="#" >Save for later</a> | <a href="#" class="remove" data-id=${id}>Remove</a></p> 
                 </div>
                 </div>
                 `;
