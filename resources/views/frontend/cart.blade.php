@@ -8,9 +8,6 @@
 	</div> -->
 	<div class="container-fluid animated animatedFadeInUp fadeInUp cart_container">
 
-
-    
-        
     <h2 class="pt-5 pb-2 ml-5">Shopping Cart <span class="total_item" style="color:#ccbd0f;"></span></h2>
     <div class="row mx-4">
       <div class="col-md-8 cart_item">
@@ -48,13 +45,27 @@
             </div>
             <div class="row mt-2 mb-3">
               <div class="col-12">
+                @auth
                 <a href="#" class="btn btn-primary btn-block checkout" style="background-color: black;">
                   Checkout
                 </a>
+                @else
+                <a href="{{route('login')}}" class="btn btn-primary btn-block checkout" style="background-color: black;">
+                  Login to Checkout
+                </a>
+                @endauth
               </div>
             </div>
           </div>
         </div>
+        
+      </div>
+      <div class="row mt-2 mb-3 ml-1 continue_shopping">
+          <a href="{{route('homepage')}}" class="btn btn-primary float-right" style="background-color: black;">
+                  Continue Shopping
+        </a>
+        
+        
       </div>
     </div>
     <hr>
@@ -226,16 +237,19 @@
 
 
             }else{
-              $(".cart_item").html('<h3 class="my-5">Your Cart is Empty</h3>');
+              $(".cart_item").html('<h3 class="my-5 ml-5">Your Cart is Empty</h3>');
               $(".order_summery").hide();
+              $(".continue_shopping").hide();
             }
           }else{
             $(".cart_item").html('<h3 class="my-5">Your Cart is Empty</h3>');
             $(".order_summery").hide();
+            $(".continue_shopping").hide();
           }
         }else{
           $(".cart_item").html('<h3 class="my-5">Your Cart is Empty</h3>');
           $(".order_summery").hide();
+          $(".continue_shopping").hide();
         }
       }
 

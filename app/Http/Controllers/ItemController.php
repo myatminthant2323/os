@@ -19,6 +19,7 @@ class ItemController extends Controller
     {
         $items = Item::all();
         // dd($items);
+        return $items;
         return view('backend.items.index',compact('items'));
     }
 

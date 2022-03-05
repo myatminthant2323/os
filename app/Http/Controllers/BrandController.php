@@ -16,6 +16,7 @@ class BrandController extends Controller
     public function index()
     {
         $brands = Brand::all();
+        // return $brands;
         // dd($items);
         return view('backend.brands.index',compact('brands'));
     }
@@ -71,6 +72,7 @@ class BrandController extends Controller
      */
     public function show($id)
     {
+        
         return view('backend.brands.show');
     }
 

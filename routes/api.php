@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::apiresource('brands','Api\BrandController'); 
+
+// make:controller Api\BrandController --api --model=Brand
+
+// --api (not include create/edit)
+// --model=Brand (no need to use filter by id)
+
+// localhost:8000/api/brands
